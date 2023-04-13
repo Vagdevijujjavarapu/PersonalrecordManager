@@ -247,8 +247,7 @@ def forget():
     return render_template('forgot.html')
 @app.route('/createpassword',methods=['GET','POST'])
 def createpassword():
-    
-        if request.method=='POST':
+    if request.method=='POST':
             oldp=request.form['npassword']
             newp=request.form['cpassword']
             if oldp==newp:
@@ -261,8 +260,7 @@ def createpassword():
                 flash('New password and confirm passwords should be same')
                 return render_template('newpassword.html')
         return render_template('newpassword.html')
-    
-if __name__=="__main__":
+    if __name__=="__main__":
     app.run()
 
 
